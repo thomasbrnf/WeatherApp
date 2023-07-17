@@ -1,0 +1,70 @@
+import { MantineProvider, MantineThemeOverride} from '@mantine/core';
+import { useForm, isNotEmpty, matches } from '@mantine/form';
+import { useNavigate } from 'react-router-dom';
+import { theme } from '../styles/theme';
+import { CustomButton, LogoText, CustomVerticalBox, HeadingsGroup, ActionGroup } from "../components/Components";
+import { CustomInput } from '../components/action/CustomInput';
+
+export default function Login() {
+  const navigate = useNavigate();
+  const form = useForm({
+    initialValues: {
+      name: '',
+      password: '',
+    },
+    validate: {
+      name: isNotEmpty('Enter your name'),
+      password: matches(/^[a-zA-Z0-9 !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]+$/, 'Passwords must contain English letters, symbols and numbers'),
+    }
+    });
+  const handleLogin = async () => {
+    form.validate();
+    
+    if(form.isValid()) {
+      const { name, password } = form.values;
+      const result = await fetch('http://localhost:5000/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          username: name,
+          password: password
+        })
+      })
+      
+      const resultInJson = await result.json();
+      if (resultInJson === 'Wrong password') {
+        form.setErrors({
+          password: 'Wrong password'
+        })
+      } else {
+        const token = resultInJson.token;
+        document.cookie = `token=${token}; path=/`; 
+        
+        navigate('/weather');
+      }
+    }
+  }
+  return (
+      <MantineProvider withGlobalStyles theme={theme as MantineThemeOverride}>
+        <CustomVerticalBox>
+
+          <HeadingsGroup>
+            <LogoText>Weatherly .</LogoText>
+          </HeadingsGroup>
+
+          <ActionGroup>
+
+          <CustomInput form={form} placeholder="Name" name='name' type='text'/>
+          <CustomInput form={form} placeholder="Password" name='password' type='password'/>
+            
+          <CustomButton type='submit' onClick={() => { handleLogin() }}>
+          Login
+          </CustomButton>
+        </ActionGroup>
+
+      </CustomVerticalBox>
+    </MantineProvider>
+  );
+}
