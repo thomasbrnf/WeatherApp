@@ -25,7 +25,7 @@ const handleRegister = async () => {
 
   if (form.isValid()) {
     const { name, password } = form.values;
-    const result = await fetch('http://localhost:5000/register', {
+    const result = await fetch('/register', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

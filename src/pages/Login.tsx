@@ -22,7 +22,7 @@ export default function Login() {
     
     if(form.isValid()) {
       const { name, password } = form.values;
-      const result = await fetch('http://localhost:5000/login', {
+      const result = await fetch('/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

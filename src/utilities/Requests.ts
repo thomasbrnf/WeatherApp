@@ -11,7 +11,7 @@ async function findInDatabase(
   location: string,
   token: string | null | undefined,
 ) {
-  const response = await fetch("http://localhost:5000/api/locations", {
+  const response = await fetch("/api/locations", {
     method: "GET",
     headers: {
       Authorization: `Bearer ${token}`,
@@ -38,7 +38,7 @@ async function addLocationToDatabase(
   location: string,
   token: string | null | undefined,
 ) {
-  const result = await fetch("http://localhost:5000/api/add-location", {
+  const result = await fetch("/api/add-location", {
     method: "POST",
     headers: {
       Authorization: `Bearer ${token}`,
@@ -56,7 +56,7 @@ export async function fetchWeatherData(
   token: string | null | undefined,
   id: number | null | undefined,
 ) {
-  const result = await fetch(`http://localhost:5000/api/weather/${id}`, {
+  const result = await fetch(`/api/weather/${id}`, {
     method: "GET",
     headers: {
       Authorization: `Bearer ${token}`,
