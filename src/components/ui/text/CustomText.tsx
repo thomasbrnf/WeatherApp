@@ -1,6 +1,6 @@
 import { Text } from "@mantine/core";
-import { useTextStyles } from "../../styles/text.styles";
-import { GeneralProps, LogoProps } from "../Props";
+import { useTextStyles } from "../../../styles/text.styles";
+import { GeneralProps, LogoProps } from "../prop.types";
 
 export function CustomText({ children }: GeneralProps) {
   const { classes } = useTextStyles();

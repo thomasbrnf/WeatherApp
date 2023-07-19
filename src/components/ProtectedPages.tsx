@@ -1,6 +1,6 @@
 import { Navigate } from "react-router-dom";
 import WeatherSearch from "../pages/Weather";
-import { getToken } from "../utilities/Requests";
+import { getToken } from "../services/auth.service";
 
 export function ProtectedPages() {
   return (

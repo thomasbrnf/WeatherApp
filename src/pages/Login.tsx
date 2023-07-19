@@ -8,8 +8,8 @@ import {
   VBox,
   VGroup,
   TextGroup,
-} from "../components/Components";
-import { CustomInput } from "../components/action/CustomInput";
+  CustomInput,
+} from "../components/ui";
 
 export default function Login() {
   const navigate = useNavigate();

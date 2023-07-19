@@ -1,8 +1,7 @@
-import { LogoText, HBox, HGroup, SearchButton } from "../components/Components";
-import { SearchInput } from "../components/action/CustomInput";
+import { LogoText, HBox, HGroup, SearchButton, SearchInput } from "../ui";
 import { Image } from "@mantine/core";
 
-export const Search = ({ form, onSearch }: any) => {
+export const SearchBar = ({ form, onSearch }: any) => {
   return (
     <HBox>
       <LogoText>Weatherly .</LogoText>

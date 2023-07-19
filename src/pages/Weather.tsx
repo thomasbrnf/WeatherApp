@@ -2,11 +2,13 @@ import { useState } from "react";
 import { MantineProvider, MantineThemeOverride } from "@mantine/core";
 import { useForm, isNotEmpty } from "@mantine/form";
 import { theme } from "../styles/theme";
-import { WeatherProps } from "../utilities/dataHandler";
-import { WeatherDisplay } from "../components/Weather/WeatherDisplay";
-import { NoWeatherData } from "../components/Weather/NoWeatherData";
-import { fetchWeather } from "../utilities/Requests";
-import { Search } from "../components/Search";
+import { WeatherProps } from "../utilities/types";
+import { fetchWeatherData } from "../services/weather.service";
+import {
+  SearchBar,
+  NoWeatherData,
+  WeatherDisplay,
+} from "../components/Weather";
 
 function WeatherBox({
   weatherData,
@@ -37,7 +39,7 @@ export default function WeatherSearch() {
 
     if (!form.isValid()) return;
 
-    const data = await fetchWeather(form);
+    const data = await fetchWeatherData(form);
     setWeatherData(data);
 
     if (!show) setShow(true);
@@ -45,7 +47,7 @@ export default function WeatherSearch() {
 
   return (
     <MantineProvider withGlobalStyles theme={theme as MantineThemeOverride}>
-      <Search form={form} onSearch={handleSearch} />
+      <SearchBar form={form} onSearch={handleSearch} />
       {show && <WeatherBox weatherData={weatherData} />}
     </MantineProvider>
   );

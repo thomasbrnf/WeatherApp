@@ -8,7 +8,7 @@ import {
   VBox,
   TextGroup,
   VGroup,
-} from "../components/Components";
+} from "../components/ui";
 
 export default function Home() {
   const navigate = useNavigate();

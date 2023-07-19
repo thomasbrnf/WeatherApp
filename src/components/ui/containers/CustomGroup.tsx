@@ -1,6 +1,6 @@
 import { Group } from "@mantine/core";
-import { useGroupStyles } from "../../styles/group.styles";
-import { GeneralProps } from "../Props";
+import { useGroupStyles } from "../../../styles/group.styles";
+import { GeneralProps } from "../prop.types";
 
 export function VGroup({ children }: GeneralProps) {
   const { classes } = useGroupStyles();

@@ -1,6 +1,6 @@
 import { Text } from "@mantine/core";
 import { useTextStyles } from "../../styles/text.styles";
-import { DBox, DGroup } from "../Components";
+import { DBox, DGroup } from "../ui";
 
 export const NoWeatherData = () => {
   const { classes } = useTextStyles();

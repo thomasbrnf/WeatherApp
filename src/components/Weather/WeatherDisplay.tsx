@@ -1,7 +1,7 @@
 import { Group } from "@mantine/core";
-import { WeatherProps } from "../../utilities/dataHandler";
+import { WeatherProps } from "../../utilities/types";
 import { useGroupStyles } from "../../styles/group.styles";
-import { DBox, DGroup } from "../Components";
+import { DBox, DGroup } from "../ui";
 import { Temperature } from "./Components/Temperature";
 import { Humidity } from "./Components/Humidity";
 import { WeatherIcon } from "./Components/WeatherIcon";

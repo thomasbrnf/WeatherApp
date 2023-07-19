@@ -18,10 +18,3 @@ function getSpeedPerHour(data: any) {
 
   return Math.floor(speed);
 }
-
-export interface WeatherProps {
-  temp: number;
-  humidity: any;
-  weather: any;
-  windSpeed: number;
-}

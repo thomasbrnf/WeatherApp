@@ -1,6 +1,6 @@
 import { Box } from "@mantine/core";
-import { useContainerStyles } from "../../styles/container.styles";
-import { GeneralProps } from "../Props";
+import { useContainerStyles } from "../../../styles/container.styles";
+import { GeneralProps } from "../prop.types";
 
 export function VBox({ children }: GeneralProps) {
   const { classes } = useContainerStyles();
