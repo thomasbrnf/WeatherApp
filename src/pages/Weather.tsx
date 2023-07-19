@@ -1,28 +1,13 @@
 import { useState } from "react";
+import { useWeather } from "../hooks/useWeather";
 import { MantineProvider, MantineThemeOverride } from "@mantine/core";
 import { useForm, isNotEmpty } from "@mantine/form";
 import { theme } from "../styles/theme";
-import { WeatherProps } from "../utilities/types";
+import { WeatherBox, SearchBar } from "../components/Weather";
 import { fetchWeatherData } from "../services/weather.service";
-import {
-  SearchBar,
-  NoWeatherData,
-  WeatherDisplay,
-} from "../components/Weather";
 
-function WeatherBox({
-  weatherData,
-}: {
-  weatherData: WeatherProps | undefined;
-}) {
-  if (weatherData === undefined) {
-    return <NoWeatherData />;
-  }
-  return <WeatherDisplay data={weatherData} />;
-}
-
-export default function WeatherSearch() {
-  const [weatherData, setWeatherData] = useState<WeatherProps | undefined>();
+export default function Weather() {
+  const { weatherData, setWeather } = useWeather();
   const [show, setShow] = useState(false);
 
   const form = useForm({
@@ -40,7 +25,7 @@ export default function WeatherSearch() {
     if (!form.isValid()) return;
 
     const data = await fetchWeatherData(form);
-    setWeatherData(data);
+    setWeather(data);
 
     if (!show) setShow(true);
   };

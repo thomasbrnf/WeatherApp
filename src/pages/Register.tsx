@@ -13,6 +13,7 @@ import {
 
 export default function Register() {
   const navigate = useNavigate();
+
   const form = useForm({
     initialValues: {
       name: "",
@@ -29,6 +30,7 @@ export default function Register() {
         value !== values.password ? "Passwords did not match" : null,
     },
   });
+
   const handleRegister = async () => {
     form.validate();
 

@@ -10,7 +10,7 @@ export const WeatherIcon = ({ weatherStatus }: any) => {
       }}
     >
       <Group>
-        <Image src={`/${weatherStatus}.svg`} />
+        <Image src={`./${weatherStatus}.svg`} />
       </Group>
       <Group
         sx={{
