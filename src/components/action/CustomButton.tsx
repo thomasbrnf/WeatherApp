@@ -1,5 +1,5 @@
 import { Button } from "@mantine/core";
-import { useButtonStyles } from "../../styles/styles";
+import { useButtonStyles } from "../../styles/button.styles";
 import { ButtonProps } from "../Props";
 
 export function CustomButton({ children, onClick, type }: ButtonProps) {

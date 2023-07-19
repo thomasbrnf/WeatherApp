@@ -1,18 +1,18 @@
 import { Box } from "@mantine/core";
-import { useContainerStyles } from "../../styles/styles";
-import { CustomBoxProps } from "../Props";
+import { useContainerStyles } from "../../styles/container.styles";
+import { GeneralProps } from "../Props";
 
-export function CustomVerticalBox({ children }: CustomBoxProps) {
+export function VBox({ children }: GeneralProps) {
   const { classes } = useContainerStyles();
   return <Box className={classes.Vbox}>{children}</Box>;
 }
 
-export function DynamicBox({ children }: CustomBoxProps) {
+export function DBox({ children }: GeneralProps) {
   const { classes } = useContainerStyles();
   return <Box className={classes.Dbox}>{children}</Box>;
 }
 
-export function CustomHorizontalBox({ children }: CustomBoxProps) {
+export function HBox({ children }: GeneralProps) {
   const { classes } = useContainerStyles();
   return <Box className={classes.Hbox}>{children}</Box>;
 }

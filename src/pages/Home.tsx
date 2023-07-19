@@ -5,26 +5,26 @@ import {
   CustomButton,
   LogoText,
   CustomText,
-  CustomVerticalBox,
-  HeadingsGroup,
-  ActionGroup,
+  VBox,
+  TextGroup,
+  VGroup,
 } from "../components/Components";
 
 export default function Home() {
   const navigate = useNavigate();
   return (
     <MantineProvider withGlobalStyles theme={theme as MantineThemeOverride}>
-      <CustomVerticalBox>
-        <HeadingsGroup>
+      <VBox>
+        <TextGroup>
           <LogoText>Weatherly .</LogoText>
           <CustomText>
             Your Trusted Source for Accurate
             <br />
             and Reliable Forecasts
           </CustomText>
-        </HeadingsGroup>
+        </TextGroup>
 
-        <ActionGroup>
+        <VGroup>
           <CustomButton
             type="button"
             onClick={async () => {
@@ -41,8 +41,8 @@ export default function Home() {
           >
             Register
           </CustomButton>
-        </ActionGroup>
-      </CustomVerticalBox>
+        </VGroup>
+      </VBox>
     </MantineProvider>
   );
 }

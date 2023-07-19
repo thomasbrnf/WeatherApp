@@ -1,12 +1,12 @@
 import { Text } from "@mantine/core";
-import { useTextStyles } from "../../styles/styles";
-import { DynamicBox, DataGroup } from "../Components";
+import { useTextStyles } from "../../styles/text.styles";
+import { DBox, DGroup } from "../Components";
 
 export const NoWeatherData = () => {
   const { classes } = useTextStyles();
   return (
-    <DynamicBox>
-      <DataGroup>
+    <DBox>
+      <DGroup>
         <Text align="center" className={classes.errorText}>
           {" "}
           Oops! <br />
@@ -14,7 +14,7 @@ export const NoWeatherData = () => {
           <br />
           that location
         </Text>
-      </DataGroup>
-    </DynamicBox>
+      </DGroup>
+    </DBox>
   );
 };

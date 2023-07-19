@@ -1,28 +1,18 @@
 import { CustomButton, SearchButton } from "./action/CustomButton";
-import { LogoText } from "./text/LogoText";
-import { CustomText } from "./text/Description";
-import {
-  CustomVerticalBox,
-  CustomHorizontalBox,
-  DynamicBox,
-} from "./containers/BoxContainer";
-import { HeadingsGroup } from "./containers/HeadingsGroup";
-import {
-  ActionGroup,
-  ActionHorizontalGroup,
-  DataGroup,
-} from "./containers/ActionGroup";
+import { CustomText, LogoText } from "./text/CustomText";
+import { VBox, HBox, DBox } from "./containers/CustomBox";
+import { VGroup, HGroup, DGroup, TextGroup } from "./containers/CustomGroup";
 
 export {
   SearchButton,
-  ActionHorizontalGroup,
-  DynamicBox,
-  CustomVerticalBox,
-  CustomHorizontalBox,
-  DataGroup,
+  HGroup,
+  DBox,
+  VBox,
+  HBox,
+  DGroup,
   CustomButton,
   LogoText,
   CustomText,
-  HeadingsGroup,
-  ActionGroup,
+  TextGroup,
+  VGroup,
 };

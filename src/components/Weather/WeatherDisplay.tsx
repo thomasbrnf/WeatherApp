@@ -1,7 +1,7 @@
 import { Group } from "@mantine/core";
 import { WeatherProps } from "../../utilities/dataHandler";
-import { useGroupStyles } from "../../styles/styles";
-import { DynamicBox, DataGroup } from "../Components";
+import { useGroupStyles } from "../../styles/group.styles";
+import { DBox, DGroup } from "../Components";
 import { Temperature } from "./Components/Temperature";
 import { Humidity } from "./Components/Humidity";
 import { WeatherIcon } from "./Components/WeatherIcon";
@@ -10,8 +10,8 @@ import { WindSpeed } from "./Components/WindSpeed";
 export const WeatherDisplay = ({ data }: { data: WeatherProps }) => {
   const { classes } = useGroupStyles();
   return (
-    <DynamicBox>
-      <DataGroup>
+    <DBox>
+      <DGroup>
         <Group>
           <Temperature temperature={data.temp} />
 
@@ -22,7 +22,7 @@ export const WeatherDisplay = ({ data }: { data: WeatherProps }) => {
         </Group>
 
         <WeatherIcon weatherStatus={data.weather} />
-      </DataGroup>
-    </DynamicBox>
+      </DGroup>
+    </DBox>
   );
 };

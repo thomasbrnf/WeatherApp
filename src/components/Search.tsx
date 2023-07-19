@@ -1,19 +1,14 @@
-import {
-  LogoText,
-  CustomHorizontalBox,
-  ActionHorizontalGroup,
-  SearchButton,
-} from "../components/Components";
-import { CustomSearch } from "../components/action/CustomInput";
+import { LogoText, HBox, HGroup, SearchButton } from "../components/Components";
+import { SearchInput } from "../components/action/CustomInput";
 import { Image } from "@mantine/core";
 
 export const Search = ({ form, onSearch }: any) => {
   return (
-    <CustomHorizontalBox>
+    <HBox>
       <LogoText>Weatherly .</LogoText>
 
-      <ActionHorizontalGroup>
-        <CustomSearch
+      <HGroup>
+        <SearchInput
           form={form}
           placeholder="Location"
           name="location"
@@ -22,7 +17,7 @@ export const Search = ({ form, onSearch }: any) => {
         <SearchButton type="submit" onClick={onSearch}>
           <Image src="/search.svg" />
         </SearchButton>
-      </ActionHorizontalGroup>
-    </CustomHorizontalBox>
+      </HGroup>
+    </HBox>
   );
 };

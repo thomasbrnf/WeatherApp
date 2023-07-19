@@ -5,9 +5,9 @@ import { theme } from "../styles/theme";
 import {
   CustomButton,
   LogoText,
-  CustomVerticalBox,
-  HeadingsGroup,
-  ActionGroup,
+  VBox,
+  VGroup,
+  TextGroup,
 } from "../components/Components";
 import { CustomInput } from "../components/action/CustomInput";
 
@@ -57,12 +57,12 @@ export default function Login() {
   };
   return (
     <MantineProvider withGlobalStyles theme={theme as MantineThemeOverride}>
-      <CustomVerticalBox>
-        <HeadingsGroup>
+      <VBox>
+        <TextGroup>
           <LogoText>Weatherly .</LogoText>
-        </HeadingsGroup>
+        </TextGroup>
 
-        <ActionGroup>
+        <VGroup>
           <CustomInput form={form} placeholder="Name" name="name" type="text" />
           <CustomInput
             form={form}
@@ -79,8 +79,8 @@ export default function Login() {
           >
             Login
           </CustomButton>
-        </ActionGroup>
-      </CustomVerticalBox>
+        </VGroup>
+      </VBox>
     </MantineProvider>
   );
 }

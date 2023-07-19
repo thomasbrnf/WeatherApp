@@ -1,5 +1,5 @@
 import { TextInput } from "@mantine/core";
-import { useInputStyles } from "../../styles/styles";
+import { useInputStyles } from "../../styles/input.styles";
 import { InputProps } from "../Props";
 
 export function CustomInput({ placeholder, form, name, type }: InputProps) {
@@ -9,19 +9,19 @@ export function CustomInput({ placeholder, form, name, type }: InputProps) {
       type={type}
       placeholder={placeholder}
       {...form.getInputProps(name)}
-      className={classes.TextInput}
+      className={classes.textInput}
     />
   );
 }
 
-export function CustomSearch({ placeholder, form, name, type }: InputProps) {
+export function SearchInput({ placeholder, form, name, type }: InputProps) {
   const { classes } = useInputStyles();
   return (
     <TextInput
       type={type}
       placeholder={placeholder}
       {...form.getInputProps(name)}
-      className={classes.SearchInput}
+      className={classes.searchInput}
     />
   );
 }
